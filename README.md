@@ -20,7 +20,7 @@ You can use the constructor to change the I2C address and the oe pin used for co
 # The parameter oe_pin allows to define the pin to which the enable pin of the PCA is connected
 # Change the I2C address depending on how the resistors on the board are set.
 # default call of function with A1 = 1 | A2 = 0 | A3 = 1 | A4 = 0 | A5 = 1 | A6 = 0 | A7 = 0, resulting in I2C address 0x15 | oe pin = 4
-SBC_MotoDriver3_Lib.init(0x15, 17)
+SBCMotoDriver3 MotoDriver(0x15, 17)
 ```
 
 ## Soft Reset
@@ -28,7 +28,7 @@ The `soft_reset` function allows you to do a Software Reset of the PCA.
 ```python
 # The function "soft_reset" takes no parameters.
 # soft_reset()
-SBC_MotoDriver3_Lib.soft_reset()
+MotoDriver.soft_reset()
 ```
 
 ## Starting communication
@@ -36,17 +36,17 @@ The function `begin` can be used to start the communication between a microcontr
 ```python
 # The function "begin" takes no parameters.
 # begin()
-SBC_MotoDriver3_Lib.begin()
+MotoDriver.begin()
 ```
 
 ## Enable
-With the function `enabled(...)` you can choose if you want to enable or disable **THE ENTIRE OUTPUT** of the SBC_MotoDriver3_Lib.
+With the function `enabled(...)` you can choose if you want to enable or disable **THE ENTIRE OUTPUT** of the MotoDriver.
 ```python
 # The function "enabled" takes 1 parameter.
 # enabled(state)
 # The parameter state allows to define if the PCA output should be anabled or not
 # default call of function with state = True
-SBC_MotoDriver3_Lib.enabled(True)
+MotoDriver.enabled(True)
 ```
 
 ## On
@@ -56,7 +56,7 @@ The `on(...)` function allows to switch on a single channel specified by the use
 # on(pin)
 # The parameter pin allows to define which pin will be switched on at max value
 # default call of function with 0
-SBC_MotoDriver3_Lib.on(0)
+MotoDriver.on(0)
 ```
 
 ## Off
@@ -66,7 +66,7 @@ The `on(...)` function allows to switch off a single channel specified by the us
 # off(pin)
 # The parameter pin allows to define which pin will be switched off
 # default call of function with 0
-SBC_MotoDriver3_Lib.off(0)
+MotoDriver.off(0)
 ```
 
 ## All On
@@ -78,7 +78,7 @@ With the function `allOn(...)` you can choose between **all even**, **all odd** 
 # The parameter backwards allows to switch on all odd channels
 # When both parameters are combined false then all channels will be switched on
 # default call of function with forward = False | backward = False
-SBC_MotoDriver3_Lib.allOn(False, False)
+MotoDriver.allOn(False, False)
 ```
 
 ## All Off
@@ -86,7 +86,7 @@ With the function `allOff` you can switch off all outputs or set all outputs to 
 ```python
 # The function "allOff" takes no parameters.
 # allOff()
-SBC_MotoDriver3_Lib.allOff()
+MotoDriver.allOff()
 ```
 
 ## Fade In
@@ -98,7 +98,7 @@ The function `fadeIn(...)` allows to fade in each of the 8 outputs to a certain 
 # The parameter timer allows to set the time with which the delay in the function will be calculated
 # The parameter brightness allows to define the value to which the prior defined pin will be faded out to
 # default call of function with Channel = 0 | time in s = 0 | value to fade to = 0
-SBC_MotoDriver3_Lib.fadeIn(0, 0, 0)
+MotoDriver.fadeIn(0, 0, 0)
 ```
 
 ## Fade Out
@@ -110,7 +110,7 @@ The function `fadeOut(...)` allows to fade out each of the 8 outputs to a certai
 # The parameter timer allows to set the time with which the delay in the function will be calculated
 # The parameter brightness allows to define the value to which the prior defined pin will be faded out to
 # default call of function with Channel = 0 | time in s = 0 | value to fade to = 0
-SBC_MotoDriver3_Lib.fadeOut(0, 0, 0)
+MotoDriver.fadeOut(0, 0, 0)
 ```
 
 ## PWM
@@ -121,7 +121,7 @@ The `pwm(...)` function allows to set any user defined channel to any user defin
 # The parameter pin allows to define the pin which will be set to value
 # The parameter value allows to define the pwm value of the specified pin.
 # default call of function with Channel = 0 | value = 0
-SBC_MotoDriver3_Lib.pwm(0, 0)
+MotoDriver.pwm(0, 0)
 ```
 
 ## LED Status
@@ -131,7 +131,7 @@ The `ledStatus(...)` function returns the current status information of the chan
 # ledStatus(pin)
 # The parameter pin allows to define the pin which will be read.
 # default call of function with Channel = 0
-SBC_MotoDriver3_Lib.ledStatus(0)
+MotoDriver.ledStatus(0)
 ```
 
 ## PWM Status
@@ -141,7 +141,7 @@ The `pwmStatus(...)` function returns the current pwm information of the channel
 # pwmStatus(pin)
 # The parameter pin allows to define the pin which will be read.
 # default call of function with Channel = 0
-SBC_MotoDriver3_Lib.pwmStatus(0)
+MotoDriver.pwmStatus(0)
 ```
 
 
@@ -155,7 +155,7 @@ With the function `StepperSpeed(...)` you can set the desired speed and the maxi
 # The parameter speed allows to define the amount of revolutions per minute.
 # The parameter steps allows to define the maximum amount of steps per 1 revolution of the stepper motor.
 # default call of function with Rpm = 30 | Maximum amount of steps = 2048
-SBC_MotoDriver3_Lib.StepperSpeed(30, 2048)
+MotoDriver.StepperSpeed(30, 2048)
 ```
 
 ## Stepper
@@ -169,7 +169,7 @@ With the function `Stepper(...)` you can let the stepper motor move a user speci
 # The parameter pin3 allows to define the third pin where the stepper motor is connected to.
 # The parameter pin4 allows to define the fourth pin where the stepper motor is connected to.
 # default call of function with Steps = 2000 | pin1 = 4 | pin2 = 5 | pin3 = 6 | pin4 = 7
-SBC_MotoDriver3_Lib.Stepper(2000, 4, 5, 6, 7)
+MotoDriver.Stepper(2000, 4, 5, 6, 7)
 ```
 
 ## License

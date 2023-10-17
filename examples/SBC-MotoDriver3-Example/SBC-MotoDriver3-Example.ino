@@ -30,7 +30,7 @@ void loop() {
   MotorDriver.allOn(false, true);
   delay(1000);
   MotorDriver.allOff();
-  delay(2000);
+  delay(1000);
   // Switch on a specific output
   MotorDriver.on(0);
   delay(2000);
@@ -50,8 +50,8 @@ void loop() {
   delay(2000);
   MotorDriver.allOff();
   delay(1000);
-  Serial.println("Stepper");
+  /*Serial.println("Stepper");
   // Let the stepper motor move the desired number of steps on the desired pins at the previously set speed.
   MotorDriver.Stepper(2000, 4, 5, 6, 7);
-  delay(1000);
+  delay(1000);*/
 }

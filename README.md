@@ -3,6 +3,8 @@
 This library provides a C++ package for the PCA9634 8-bit Fm+ I2C-bus LED driver.
 See **https://joy-it.net/products/SBC-MotoDriver3** for more details.
 
+Derived from the pca9634-lib (**https://github.com/NickvanTholen/pca9634-lib**) by Nickvan Tholen (**https://github.com/NickvanTholen**).
+
 ## Behaviour considered to be a pass
 As long as the microcontroller or single board computer still finds the I2C addresses of the PCA9634 (0x03, 0x15 and 0x70, 0x15 is the changeable I2C address), it is considered a pass. If the connected motors still rotate when prompted to rotate, it is also considered to be a pass.
 
